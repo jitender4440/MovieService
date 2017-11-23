@@ -17,6 +17,6 @@ public class AppTest {
     public void testApp() {
 		HomeController hc = new HomeController();
 		String result = hc.home();
-        assertEquals( result, "Application deployed successfuly!!" );
+        assertEquals( result, "MovieService application deployed successfully!!" );
 	}
 }

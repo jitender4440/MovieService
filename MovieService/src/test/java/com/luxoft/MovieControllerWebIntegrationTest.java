@@ -33,7 +33,7 @@ public class MovieControllerWebIntegrationTest {
 	public void testGetMovieById() throws IOException {
 		RestTemplate restTemplate = new TestRestTemplate();
 
-		ResponseEntity<Movie> response = restTemplate.exchange("http://localhost:8080/api/v1/movie/6", HttpMethod.GET,
+		ResponseEntity<Movie> response = restTemplate.exchange("http://localhost:8080/api/v1/movie/2", HttpMethod.GET,
 				new HttpEntity<Movie>(AppUtility.createHeaders("user", "user@123")), Movie.class);
 
 		assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));

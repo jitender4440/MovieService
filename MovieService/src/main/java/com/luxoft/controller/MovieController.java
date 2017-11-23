@@ -24,15 +24,12 @@ import com.luxoft.util.AppUtility;
 @RequestMapping("api/v1/")
 public class MovieController {
 	
-	@Autowired
-	Movie movie;
-	
 	@Cacheable("movies")	
 	@RequestMapping(value = "movie/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Movie> getMovieById(@PathVariable Long id) {			
 		//AppUtility.delayExecution();	//this statement can be enabled to delay execution for certain time to test cache functionality.
 		
-		movie = MovieStub.movies.get(id);
+		Movie movie = MovieStub.movies.get(id);
 		
 		if(movie == null)		
 		return new ResponseEntity<Movie>(movie,HttpStatus.NOT_FOUND);
